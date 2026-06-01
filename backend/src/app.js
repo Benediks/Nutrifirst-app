@@ -8,9 +8,10 @@ import recommendRoutes from './routes/recommend.routes.js';
 
 const app = express();
 
-// ============================================================
+
+
 // MIDDLEWARE
-// ============================================================
+
 
 // CORS - izinkan frontend kirim cookie
 app.use(
@@ -26,9 +27,9 @@ app.use(
 app.use(express.json({ limit: '1mb' }));
 app.use(cookieParser());
 
-// ============================================================
+
 // ROUTES
-// ============================================================
+
 
 // Health check (untuk monitoring & test)
 app.get('/api/health', (req, res) => {
@@ -43,9 +44,7 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/recommend', recommendRoutes);
 
-// ============================================================
-// ERROR HANDLERS
-// ============================================================
+
 
 // 404 handler
 app.use((req, res) => {

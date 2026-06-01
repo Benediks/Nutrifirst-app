@@ -12,9 +12,9 @@ const VALID_RANGES = [
   '>= 25000',
 ];
 
-// ============================================================
+
 // POST /api/recommend  (Protected)
-// ============================================================
+
 export async function recommend(req, res) {
   try {
     const { ingredient, priceRange } = req.body;
@@ -89,9 +89,8 @@ export async function recommend(req, res) {
   }
 }
 
-// ============================================================
 // GET /api/recommend/history  (Protected)
-// ============================================================
+
 export async function history(req, res) {
   try {
     const items = await prisma.prediction.findMany({

@@ -4,13 +4,7 @@ import { prisma } from '../lib/prisma.js';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-/**
- * Konfigurasi cookie:
- * - httpOnly: JavaScript browser TIDAK bisa baca (anti XSS)
- * - secure: HTTPS-only di production
- * - sameSite: 'lax' di dev (localhost beda port), 'none' di prod (cross-domain)
- * - maxAge: 7 hari
- */
+
 const cookieOptions = {
   httpOnly: true,
   secure: isProduction,
@@ -27,9 +21,9 @@ function generateToken(user) {
   );
 }
 
-// ============================================================
+
 // POST /api/auth/register
-// ============================================================
+
 export async function register(req, res) {
   try {
     const { email, password, name } = req.body;
@@ -73,9 +67,9 @@ export async function register(req, res) {
   }
 }
 
-// ============================================================
+
 // POST /api/auth/login
-// ============================================================
+
 export async function login(req, res) {
   try {
     const { email, password } = req.body;
@@ -109,17 +103,17 @@ export async function login(req, res) {
   }
 }
 
-// ============================================================
+
 // POST /api/auth/logout
-// ============================================================
+
 export async function logout(req, res) {
   res.clearCookie('token', { ...cookieOptions, maxAge: 0 });
   return res.json({ message: 'Logout berhasil' });
 }
 
-// ============================================================
+
 // GET /api/auth/me  (Protected)
-// ============================================================
+
 export async function me(req, res) {
   try {
     const user = await prisma.user.findUnique({

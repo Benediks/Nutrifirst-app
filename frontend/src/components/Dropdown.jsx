@@ -23,11 +23,11 @@ export default function Dropdown({ label, options, value, onChange }) {
           transition-all shadow-lg
           ${open ? 'ring-4 ring-tosca shadow-glow' : 'hover:shadow-glow-sm'}`}
       >
-        <span className={`text-base ${value ? 'text-gray-800 font-medium' : 'text-tosca'}`}>
+        <span className={`text-base ${value ? 'text-gray-800 font-medium' : 'text-gray-800'}`}>
           {value || label}
         </span>
         <svg
-          className={`w-5 h-5 text-tosca transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-black transition-transform ${open ? 'rotate-180' : ''}`}
           fill="none" stroke="currentColor" viewBox="0 0 24 24"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -42,7 +42,7 @@ export default function Dropdown({ label, options, value, onChange }) {
               key={opt}
               type="button"
               onClick={() => { onChange(opt); setOpen(false); }}
-              className={`w-full px-5 py-4 text-left text-tosca font-medium hover:bg-tosca/10 transition
+              className={`w-full px-5 py-4 text-left text-black font-medium hover:bg-tosca/10 transition
                 ${idx !== options.length - 1 ? 'border-b border-gray-100' : ''}`}
             >
               {opt}
