@@ -146,6 +146,8 @@ AImodelNutrifirst/AI_Pipeline/
 
 Proyek ini terdiri dari **3 services** yang harus jalan paralel di 3 terminal terpisah. Ikuti urutan di bawah.
 
+CLI Terminal yang direkomendasikan: Powershell
+
 ### LANGKAH 0 — Clone Repository
 
 ```bash
