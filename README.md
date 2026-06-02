@@ -215,13 +215,13 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public
 
 #### A. Pindah ke folder AI Service
 
-```bash
+```bash/powershell
 cd AImodelNutrifirst
 ```
 
 #### B. (Opsional tapi direkomendasikan) Buat Python virtual environment
 
-```bash
+```bash/powershell
 python -m venv venv
 
 # Windows
@@ -233,7 +233,7 @@ source venv/bin/activate
 
 #### C. Install dependensi Python
 
-```bash
+```bash/powershell
 pip install -r requirements.txt
 ```
 
@@ -244,15 +244,15 @@ pip install -r requirements.txt
 
 #### D. Pastikan file model sudah diunduh
 
-```bash
-ls AI_Pipeline/nutri_model.keras AI_Pipeline/scaler_nn.pkl
+```bash/powershell
+ AI_Pipeline/nutri_model.keras AI_Pipeline/scaler_nn.pkl
 ```
 
 Kalau belum ada, kembali ke bagian **Persiapan Model AI** di atas.
 
 #### E. Jalankan FastAPI server
 
-```bash
+```bash/powershell
 uvicorn api_ai_model:app --reload --port 8000
 ```
 
