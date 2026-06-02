@@ -205,13 +205,13 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public
 \q
 ```
 
-> 💡 Anda bebas mengganti `nutrifirst123$$` dengan password lain — sesuaikan juga di `backend/.env` nanti.
+>  Anda bebas mengganti `nutrifirst123$$` dengan password lain — sesuaikan juga di `backend/.env`.
 
 ---
 
 ### LANGKAH 2 — AI Service (FastAPI Inference)
 
-> 🪟 **Terminal 1 — Khusus AI Service**
+>  **Terminal 1 — Khusus AI Service**
 
 #### A. Pindah ke folder AI Service
 
